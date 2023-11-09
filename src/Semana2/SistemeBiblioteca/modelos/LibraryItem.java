@@ -33,4 +33,9 @@ public class LibraryItem {
     public void setStatus(boolean status) {
         this.status = status;
     }
+    public void showInfo(){
+        System.out.println("Title: " + this.title);
+        System.out.println("Id " + this.id);
+        System.out.println("Status" + this.status);
+    }
 }

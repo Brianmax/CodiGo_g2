@@ -13,4 +13,12 @@ public class Book extends LibraryItem{
     public void setAuthor(String author) {
         this.author = author;
     }
+    @Override
+    public void showInfo(){
+        System.out.println("El libro tiene los siguientes datos");
+        System.out.println("Title: " + this.title);
+        System.out.println("Id: " + this.id);
+        System.out.println("Status: " + this.status);
+        System.out.println("Author: " + this.author);
+    }
 }

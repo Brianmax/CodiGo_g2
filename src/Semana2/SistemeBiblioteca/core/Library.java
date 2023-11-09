@@ -39,4 +39,45 @@ public class Library {
     public void setUserList(List<User> userList) {
         this.userList = userList;
     }
+
+    public void showItems(){
+        for(LibraryItem item: this.libraryItems){
+            item.showInfo();
+            System.out.println("-------------------------------");
+        }
+    }
+    public void prestamo(String username, String title){
+        User userFound = null;
+
+        for(User user: this.userList){
+            if(user.getUsername().equals(username)){
+                userFound = user;
+                break;
+            }
+        }
+        if(userFound == null){
+            System.out.println("Usuario no encontrado");
+            return;
+        }
+        // verificamos si existe el recurso
+        LibraryItem itemFound = null;
+        for(LibraryItem item: this.libraryItems){
+            if(item.getTitle().equals(title)){
+                itemFound = item;
+                break;
+            }
+        }
+        if(itemFound==null){
+            System.out.println("Item no encontrado");
+            return;
+        }
+        if(itemFound.isStatus()){
+            userFound.addItem(itemFound);
+            itemFound.setStatus(false);
+            System.out.println("Item prestado");
+        }
+        else {
+            System.out.println("Item no disponible");
+        }
+    }
 }

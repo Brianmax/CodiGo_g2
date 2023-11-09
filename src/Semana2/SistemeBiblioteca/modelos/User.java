@@ -35,4 +35,7 @@ public class User {
     public void setLibraryItemList(List<LibraryItem> libraryItemList) {
         this.libraryItemList = libraryItemList;
     }
+    public void addItem(LibraryItem item){
+        this.libraryItemList.add(item);
+    }
 }

@@ -8,6 +8,7 @@ import Semana2.SistemeBiblioteca.modelos.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
@@ -31,7 +32,23 @@ public class Application {
 
         library1.setLibraryItems(libraryItems);
         library1.setUserList(userList);
-
-
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            System.out.println("Bienvenido a la biblioteca " + library1.getName());
+            System.out.println("Ingrese 1 para ver los items");
+            System.out.println("Ingrese 2 para ver los usuarios");
+            System.out.println("Ingrese 3 para pedir un prestamo");
+            int option = sc.nextInt();
+            if(option==1){
+                library1.showItems();
+            }
+            if(option==3){
+                System.out.println("Ingrese su usuario");
+                String usuario = sc.next();
+                System.out.println("Ingrese el titulo");
+                String titulo = sc.next();
+                library1.prestamo(usuario, titulo);
+            }
+        }
     }
 }

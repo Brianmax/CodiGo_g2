@@ -23,4 +23,13 @@ public class DVD extends LibraryItem{
     public void setDuration(short duration) {
         this.duration = duration;
     }
+    @Override
+    public void showInfo(){
+        System.out.println("El DVD tiene los siguientes datos");
+        System.out.println("Title: " + this.title);
+        System.out.println("Id " + this.id);
+        System.out.println("Status" + this.status);
+        System.out.println("Director: " + this.director);
+        System.out.println("Duration: " + this.duration);
+    }
 }
