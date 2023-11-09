@@ -1,11 +1,17 @@
 package Semana2.SistemeBiblioteca.modelos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
     private String username;
     private int id;
     private List<LibraryItem> libraryItemList;
+    public User(String username, int id){
+        this.username = username;
+        this.id = id;
+        this.libraryItemList = new ArrayList<>();
+    }
     public String getUsername() {
         return username;
     }
