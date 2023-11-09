@@ -15,4 +15,7 @@ public class DVD extends LibraryItem{
         return duration;
     }
 
+    public void setDuration(short duration) {
+        this.duration = duration;
+    }
 }
