@@ -38,6 +38,8 @@ public class Application {
             System.out.println("Ingrese 1 para ver los items");
             System.out.println("Ingrese 2 para ver los usuarios");
             System.out.println("Ingrese 3 para pedir un prestamo");
+            System.out.println("Ingrese 4 para ver la informacion de un usuario");
+            System.out.println("Ingrese 5 para devolver un item");
             int option = sc.nextInt();
             if(option==1){
                 library1.showItems();
