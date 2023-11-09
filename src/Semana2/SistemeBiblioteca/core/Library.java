@@ -4,6 +4,7 @@ import Semana2.POO.Usuario;
 import Semana2.SistemeBiblioteca.modelos.LibraryItem;
 import Semana2.SistemeBiblioteca.modelos.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -11,6 +12,11 @@ public class Library {
     private String name;
     private List<LibraryItem> libraryItems;
     private List<User> userList;
+    public Library(String name){
+        this.name = name;
+        this.libraryItems = new ArrayList<>();
+        this.userList = new ArrayList<>();
+    }
     public String getName() {
         return name;
     }

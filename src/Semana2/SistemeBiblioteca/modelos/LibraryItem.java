@@ -4,6 +4,12 @@ public class LibraryItem {
     protected String title;
     protected int id;
     protected boolean status;
+
+    public LibraryItem(String title, int id, boolean status){
+        this.title = title;
+        this.id = id;
+        this.status = status;
+    }
     public String getTitle() {
         return title;
     }
