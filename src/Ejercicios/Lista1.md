@@ -427,59 +427,62 @@ En la clase `Main`, se deberá:
 - Escriba el código en Java.
 
 # Ejercicio 15
+
 ## Descripción
 
-El objetivo de este ejercicio es desarrollar un sistema de matrículas para una institución educativa, utilizando interfaces para definir comportamientos comunes en la gestión de estudiantes y cursos.
+El objetivo de este ejercicio es desarrollar un sistema de matrículas para una institución educativa, utilizando herencia múltiple a través de interfaces. Este sistema deberá gestionar estudiantes, profesores y cursos, permitiendo registrar, matricular y asignar tareas.
 
 ## Interfaces
 
-### `IRegistrable`
-- **Descripción**: Interfaz para gestionar la matrícula de los estudiantes.
+### `Usuario`
+- **Descripción**: Interfaz base para todos los usuarios del sistema.
 - **Métodos**:
-  - `registrar()`: Matricular a un estudiante en un curso.
-  - `cancelarMatricula()`: Cancelar la matrícula de un estudiante.
+  - `iniciarSesion()`: Permite al usuario iniciar sesión en el sistema.
+  - `cerrarSesion()`: Permite al usuario cerrar sesión.
 
-### `ICursoManageable`
-- **Descripción**: Interfaz para manejar las operaciones relacionadas con los cursos.
+### `Estudiante`
+- **Descripción**: Interfaz para los estudiantes.
 - **Métodos**:
-  - `addEstudiante()`: Añadir un estudiante al curso.
-  - `removeEstudiante()`: Eliminar un estudiante del curso.
-  - `listarEstudiantes()`: Listar todos los estudiantes matriculados en el curso.
+  - `matricularCurso()`: Permite al estudiante matricularse en un curso.
+  - `entregarTarea()`: Permite al estudiante entregar tareas.
+
+### `Profesor`
+- **Descripción**: Interfaz para los profesores.
+- **Métodos**:
+  - `calificarExamen()`: Permite al profesor calificar exámenes.
+  - `asignarTarea()`: Permite al profesor asignar tareas.
 
 ## Clases
 
-### `Estudiante` (implementa `IRegistrable`)
-- **Descripción**: Representa a un estudiante en la institución.
+### `Persona` (implementa `Usuario`)
+- **Descripción**: Clase base para representar a todos los usuarios.
 - **Atributos**:
-  - `nombre`: Nombre del estudiante.
-  - `id`: Identificación única del estudiante.
+  - `nombre`: Nombre de la persona.
 - **Métodos**:
-  - Implementación de los métodos de la interfaz `IRegistrable`.
+  - Implementación de los métodos de la interfaz `Usuario`.
 
-### `Curso` (implementa `ICursoManageable`)
-- **Descripción**: Representa un curso ofrecido por la institución.
+### `EstudianteProfesor` (extiende `Persona`, implementa `Estudiante`, `Profesor`)
+- **Descripción**: Representa a una persona que es tanto estudiante como profesor.
+- **Métodos**:
+  - Implementación de los métodos de las interfaces `Estudiante` y `Profesor`.
+
+### `Curso`
+- **Descripción**: Representa un curso en la institución.
 - **Atributos**:
   - `nombre`: Nombre del curso.
-  - `codigo`: Código único del curso.
-  - `estudiantesMatriculados`: Lista de estudiantes matriculados en el curso.
+  - `codigo`: Código del curso.
+  - `estudiantes`: Lista de estudiantes en el curso.
 - **Métodos**:
-  - Implementación de los métodos de la interfaz `ICursoManageable`.
-
-### `SistemaMatriculas`
-- **Descripción**: Gestiona la matrícula y los cursos en la institución.
-- **Atributos**:
-  - `cursos`: Lista de cursos disponibles para matrícula.
-  - `estudiantes`: Lista de estudiantes registrados.
-- **Métodos**:
-  - Métodos para registrar y cancelar matrículas.
-  - Métodos para añadir y gestionar cursos.
+  - Métodos para gestionar el curso y sus estudiantes.
 
 ## Funcionalidad Principal
 
 En la clase `Main`, se deberá:
 
-- Crear instancias de `Estudiante` y `Curso`.
-- Registrar estudiantes en diferentes cursos utilizando el método `registrar()`.
-- Listar los estudiantes matriculados en cada curso.
-- Cancelar la matrícula de un estudiante en un curso.
-- Gestionar y mostrar la información de cursos y estudiantes en el sistema de matrículas.
+- Crear instancias de `Persona`, `EstudianteProfesor` y `Curso`.
+- Utilizar `EstudianteProfesor` para demostrar la herencia múltiple (la misma persona realizando acciones tanto de estudiante como de profesor).
+- Matricular a los estudiantes en los cursos y asignar tareas.
+- Calificar exámenes y gestionar las listas de estudiantes en los cursos.
+- Demostrar el inicio y cierre de sesión en el sistema por parte de los usuarios.
+
+Este ejercicio proporcionará una comprensión práctica de cómo se puede utilizar la herencia múltiple en Java mediante interfaces para crear un sistema de gestión flexible que abarque múltiples roles y funcionalidades.
