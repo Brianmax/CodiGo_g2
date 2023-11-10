@@ -425,3 +425,59 @@ En la clase `Main`, se deberá:
 - Implemente las clases concretas proporcionando funcionalidades específicas.
 - Asegúrese de que todas las clases e interfaces tengan una estructura coherente y métodos bien definidos.
 - Escriba el código en Java.
+## Descripción
+
+El objetivo de este ejercicio es desarrollar un sistema de matrículas para una institución educativa, utilizando interfaces para definir comportamientos comunes en la gestión de estudiantes y cursos.
+
+## Interfaces
+
+### `IRegistrable`
+- **Descripción**: Interfaz para gestionar la matrícula de los estudiantes.
+- **Métodos**:
+  - `registrar()`: Matricular a un estudiante en un curso.
+  - `cancelarMatricula()`: Cancelar la matrícula de un estudiante.
+
+### `ICursoManageable`
+- **Descripción**: Interfaz para manejar las operaciones relacionadas con los cursos.
+- **Métodos**:
+  - `addEstudiante()`: Añadir un estudiante al curso.
+  - `removeEstudiante()`: Eliminar un estudiante del curso.
+  - `listarEstudiantes()`: Listar todos los estudiantes matriculados en el curso.
+
+## Clases
+
+### `Estudiante` (implementa `IRegistrable`)
+- **Descripción**: Representa a un estudiante en la institución.
+- **Atributos**:
+  - `nombre`: Nombre del estudiante.
+  - `id`: Identificación única del estudiante.
+- **Métodos**:
+  - Implementación de los métodos de la interfaz `IRegistrable`.
+
+### `Curso` (implementa `ICursoManageable`)
+- **Descripción**: Representa un curso ofrecido por la institución.
+- **Atributos**:
+  - `nombre`: Nombre del curso.
+  - `codigo`: Código único del curso.
+  - `estudiantesMatriculados`: Lista de estudiantes matriculados en el curso.
+- **Métodos**:
+  - Implementación de los métodos de la interfaz `ICursoManageable`.
+
+### `SistemaMatriculas`
+- **Descripción**: Gestiona la matrícula y los cursos en la institución.
+- **Atributos**:
+  - `cursos`: Lista de cursos disponibles para matrícula.
+  - `estudiantes`: Lista de estudiantes registrados.
+- **Métodos**:
+  - Métodos para registrar y cancelar matrículas.
+  - Métodos para añadir y gestionar cursos.
+
+## Funcionalidad Principal
+
+En la clase `Main`, se deberá:
+
+- Crear instancias de `Estudiante` y `Curso`.
+- Registrar estudiantes en diferentes cursos utilizando el método `registrar()`.
+- Listar los estudiantes matriculados en cada curso.
+- Cancelar la matrícula de un estudiante en un curso.
+- Gestionar y mostrar la información de cursos y estudiantes en el sistema de matrículas.
