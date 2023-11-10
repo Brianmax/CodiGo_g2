@@ -291,7 +291,7 @@ Desarrollar un sistema de gestión para la renta de películas, utilizando princ
 - **Atributos privados**:
   - `itemName`: Nombre del ítem.
   - `itemID`: ID único del ítem.
-  - `available`: Bandera que indica si el ítem está disponible para renta.
+  - `available`: Atributo que indica si el ítem está disponible para renta.
 - **Métodos**:
   - Getters y setters para los atributos.
   - `showDetails()`: Método para mostrar los detalles del ítem.
