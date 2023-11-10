@@ -463,11 +463,16 @@ El objetivo de este ejercicio es desarrollar un sistema de matrículas para una 
 
 ### `SoloEstudiante` (extiende `Persona`, implementa `Estudiante`)
 - **Descripción**: Representa exclusivamente a un estudiante.
+- **Atributos**:
+    - `cursos`: Lista de cursos en los que está matriculado el estudiante.
 - **Métodos**:
   - Implementación de los métodos de la interfaz `Estudiante`.
 
 ### `EstudianteProfesor` (extiende `Persona`, implementa `Estudiante`, `Profesor`)
 - **Descripción**: Representa a una persona que es tanto estudiante como profesor.
+- **Atributos**:
+  - `cursos`: Lista de cursos en los que está matriculado el estudiante.
+  - `cursosImpartidos`: Lista de cursos que imparte el profesor.
 - **Métodos**:
   - Implementación de los métodos de las interfaces `Estudiante` y `Profesor`.
 
