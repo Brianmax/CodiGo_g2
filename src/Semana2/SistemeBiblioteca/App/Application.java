@@ -29,7 +29,6 @@ public class Application {
                 new User("Julia", 4)
 
         );
-
         library1.setLibraryItems(libraryItems);
         library1.setUserList(userList);
         Scanner sc = new Scanner(System.in);

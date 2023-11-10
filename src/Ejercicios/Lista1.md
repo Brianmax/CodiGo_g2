@@ -278,79 +278,76 @@ En la clase `Main`, se deberá:
 
 
 
-## Ejercicio 13
+## Ejericicio 13
 
 ## Descripción
 
-El objetivo de este ejercicio es desarrollar un sistema de gestión para un cine que maneje películas, salas y clientes utilizando principios de programación orientada a objetos como la herencia y el polimorfismo.
+Desarrollar un sistema de gestión para la renta de películas, utilizando principios de programación orientada a objetos como la herencia y el polimorfismo.
 
 ## Clases
 
-### `CinemaItem`
-- **Descripción**: Clase base para ítems en el cine.
+### `RentalItem`
+- **Descripción**: Clase base para ítems en el sistema de renta.
 - **Atributos privados**:
-    - `itemName`: Nombre del ítem.
-    - `itemID`: ID único del ítem.
-    - `inUse`: Bandera que indica si el ítem está en uso.
+  - `itemName`: Nombre del ítem.
+  - `itemID`: ID único del ítem.
+  - `available`: Bandera que indica si el ítem está disponible para renta.
 - **Métodos**:
-    - Getters y setters para los atributos.
-    - `showDetails()`: Método para mostrar los detalles del ítem.
+  - Getters y setters para los atributos.
+  - `showDetails()`: Método para mostrar los detalles del ítem.
 
-### `Movie` (hereda de `CinemaItem`)
-- **Descripción**: Representa una película en el cine.
+### `Movie` (hereda de `RentalItem`)
+- **Descripción**: Representa una película disponible para renta.
 - **Atributos privados adicionales**:
-    - `director`: Director de la película.
-    - `duration`: Duración de la película.
-    - `ageRating`: Clasificación por edades.
+  - `director`: Director de la película.
+  - `duration`: Duración de la película.
+  - `ageRating`: Clasificación por edades.
+  - `genre`: Género de la película.
 - **Métodos**:
-    - Constructores, getters y setters para los nuevos atributos.
-    - Sobrescritura del método `showDetails()` para incluir detalles adicionales de la película.
+  - Constructores, getters y setters para los nuevos atributos.
+  - Sobrescritura del método `showDetails()` para incluir detalles adicionales de la película.
 
-### `TheaterRoom` (hereda de `CinemaItem`)
-- **Descripción**: Representa una sala dentro del cine.
-- **Atributos privados adicionales**:
-    - `seatCapacity`: Capacidad de asientos de la sala.
-    - `roomNumber`: Número identificativo de la sala.
-    - `is3D`: Indica si la sala está equipada con tecnología 3D.
-- **Métodos**:
-    - Constructores, getters y setters para los nuevos atributos.
-    - Sobrescritura del método `showDetails()` para incluir detalles de la sala.
-
-### `CinemaClient`
-- **Descripción**: Representa a un cliente del cine.
+### `Customer`
+- **Descripción**: Representa a un cliente del sistema de renta.
 - **Atributos privados**:
-    - `clientName`: Nombre del cliente.
-    - `clientID`: ID del cliente.
-    - `moviesWatched`: Lista de películas vistas por el cliente.
+  - `customerName`: Nombre del cliente.
+  - `customerID`: ID del cliente.
+  - `rentedMovies`: Lista de películas rentadas por el cliente.
 - **Métodos**:
-    - Getters y setters para los atributos.
-    - `showClientDetails()`: Método para mostrar los detalles del cliente.
+  - Getters y setters para los atributos.
+  - `showCustomerDetails()`: Método para mostrar los detalles del cliente.
 
-### `Cinema`
-- **Descripción**: Representa el cine y maneja todos los ítems del cine.
+### `MovieRentalSystem`
+- **Descripción**: Representa el sistema de renta de películas y maneja todos los ítems de renta.
 - **Atributos**:
-    - `cinemaItems`: Colección de `CinemaItems`.
+  - `rentalItems`: Colección de `RentalItems`.
+  - `customers`: Lista de clientes registrados.
 - **Métodos**:
-    - `addItem()`: Añadir nuevos ítems al cine.
-    - `showAllItems()`: Mostrar todos los ítems del cine.
-    - `assignMovieToRoom()`: Asignar una película a una sala.
-    - `releaseRoom()`: Liberar una sala después de una proyección.
+  - `addItem()`: Añadir nuevos ítems al sistema.
+  - `registerCustomer()`: Registrar un nuevo cliente.
+  - `rentMovieToCustomer()`: Rentar una película a un cliente.
+  - `returnMovie()`: Procesar la devolución de una película rentada.
+  - `showAllItems()`: Mostrar todos los ítems disponibles para renta.
+  - `showAllCustomers()`: Mostrar todos los clientes registrados.
 
 ## Funcionalidad Principal
 
 En la clase `Main`, se deberá:
 
-- Instanciar varias películas y salas.
-- Añadir estas películas y salas a la colección de ítems del cine.
-- Asignar películas a salas específicas, actualizando su estado `inUse`.
-- Registrar clientes y sus películas vistas.
-- Mostrar los detalles de películas, salas y clientes.
+- Instanciar varias películas.
+- Añadir estas películas a la colección de ítems del sistema de renta.
+- Registrar clientes en el sistema.
+- Desarrollar una interfaz de consola que permita realizar las siguientes operaciones:
+  - Rentar películas a los clientes, actualizando su estado `available`.
+  - Procesar devoluciones de películas.
+  - Mostrar los detalles de películas y clientes.
 
 ## Instrucciones Adicionales
 
-- Utilice polimorfismo para manejar los distintos tipos de `CinemaItems`.
+- Utilice polimorfismo para manejar los distintos tipos de `RentalItems`.
 - Asegúrese de que todas las clases tengan una estructura coherente y métodos bien definidos.
 - Escriba el código en el lenguaje de programación Java.
+
 
 # Ejercicio 14
 
