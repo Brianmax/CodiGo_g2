@@ -425,6 +425,8 @@ En la clase `Main`, se deberá:
 - Implemente las clases concretas proporcionando funcionalidades específicas.
 - Asegúrese de que todas las clases e interfaces tengan una estructura coherente y métodos bien definidos.
 - Escriba el código en Java.
+
+# Ejercicio 15
 ## Descripción
 
 El objetivo de este ejercicio es desarrollar un sistema de matrículas para una institución educativa, utilizando interfaces para definir comportamientos comunes en la gestión de estudiantes y cursos.
