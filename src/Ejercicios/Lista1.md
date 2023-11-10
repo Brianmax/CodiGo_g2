@@ -461,6 +461,11 @@ El objetivo de este ejercicio es desarrollar un sistema de matrículas para una 
 - **Métodos**:
   - Implementación de los métodos de la interfaz `Usuario`.
 
+### `SoloEstudiante` (extiende `Persona`, implementa `Estudiante`)
+- **Descripción**: Representa exclusivamente a un estudiante.
+- **Métodos**:
+  - Implementación de los métodos de la interfaz `Estudiante`.
+
 ### `EstudianteProfesor` (extiende `Persona`, implementa `Estudiante`, `Profesor`)
 - **Descripción**: Representa a una persona que es tanto estudiante como profesor.
 - **Métodos**:
@@ -479,10 +484,10 @@ El objetivo de este ejercicio es desarrollar un sistema de matrículas para una 
 
 En la clase `Main`, se deberá:
 
-- Crear instancias de `Persona`, `EstudianteProfesor` y `Curso`.
-- Utilizar `EstudianteProfesor` para demostrar la herencia múltiple (la misma persona realizando acciones tanto de estudiante como de profesor).
-- Matricular a los estudiantes en los cursos y asignar tareas.
-- Calificar exámenes y gestionar las listas de estudiantes en los cursos.
+- Crear instancias de `Persona`, `SoloEstudiante`, `EstudianteProfesor` y `Curso`.
+- Utilizar `SoloEstudiante` y `EstudianteProfesor` para matricular a los estudiantes en los cursos y asignar tareas.
+- Utilizar `EstudianteProfesor` para realizar acciones de profesor, como calificar exámenes.
+- Gestionar las listas de estudiantes en los cursos.
 - Demostrar el inicio y cierre de sesión en el sistema por parte de los usuarios.
 
 Este ejercicio proporcionará una comprensión práctica de cómo se puede utilizar la herencia múltiple en Java mediante interfaces para crear un sistema de gestión flexible que abarque múltiples roles y funcionalidades.
