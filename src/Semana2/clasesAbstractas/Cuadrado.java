@@ -8,11 +8,11 @@ public class Cuadrado extends Figura{
     }
     @Override
     public float area() {
-        return this.lado*this.lado;
+        return lado*lado;
     }
 
     @Override
     public float perimetro() {
-        return lado*4;
+        return this.lado*4;
     }
 }
