@@ -1,6 +1,6 @@
 package Semana2.clasesAbstractas;
 
-public class Cuadrado extends Figura{
+public class Cuadrado extends Figura {
     private float lado;
     public Cuadrado(String color, boolean relleno, float lado){
         super(color, relleno);
