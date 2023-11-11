@@ -11,22 +11,34 @@ public class Inventory implements InventoryManageable {
         productList = new ArrayList<>();
     }
     @Override
-    public void addItem() {
-
+    public void addItem(Product product) {
+        this.productList.add(product);
     }
 
     @Override
-    public void deleteItem() {
-
+    public void deleteItem(int id) {
+        for(Product product: this.productList){
+            if(product.productId == id){
+                this.productList.remove(product);
+                break;
+            }
+        }
     }
 
     @Override
     public void listItems() {
-
+        for(Product product: this.productList){
+            product.showDetails();
+        }
     }
 
     @Override
-    public void findItemById() {
-
+    public void findItemById(int id) {
+        for(Product product: this.productList){
+            if(product.productId == id){
+                product.showDetails();
+                break;
+            }
+        }
     }
 }
