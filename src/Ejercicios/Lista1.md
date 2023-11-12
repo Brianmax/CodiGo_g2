@@ -274,9 +274,6 @@ En la clase `Main`, se deberá:
 
 ---
 
-¡Buena suerte con la implementación de tu Sistema de Biblioteca Simple!
-
-
 
 ## Ejericicio 13
 
@@ -496,3 +493,73 @@ En la clase `Main`, se deberá:
 - Demostrar el inicio y cierre de sesión en el sistema por parte de los usuarios.
 
 Este ejercicio proporcionará una comprensión práctica de cómo se puede utilizar la herencia múltiple en Java mediante interfaces para crear un sistema de gestión flexible que abarque múltiples roles y funcionalidades.
+
+# Ejercicio 16
+
+## Descripción
+
+Desarrolla un sistema para gestionar un registro de vehículos, utilizando principios de programación orientada a objetos como la herencia y el polimorfismo.
+
+## Clases
+
+### `Vehicle` (Vehículo)
+- **Descripción**: Clase base para vehículos.
+- **Atributos privados**:
+  - `make`: Marca del vehículo.
+  - `model`: Modelo del vehículo.
+  - `year`: Año de fabricación.
+  - `registrationNumber`: Número de matrícula.
+- **Métodos**:
+  - Getters y setters para los atributos.
+  - `showDetails()`: Método para mostrar los detalles del vehículo.
+
+### `Car` (hereda de `Vehicle`)
+- **Descripción**: Representa un automóvil.
+- **Atributos privados adicionales**:
+  - `seatingCapacity`: Capacidad de asientos.
+  - `fuelType`: Tipo de combustible.
+- **Métodos**:
+  - Constructores, getters y setters para los nuevos atributos.
+  - Sobrescritura del método `showDetails()` para incluir capacidad de asientos y tipo de combustible.
+
+### `Motorcycle` (hereda de `Vehicle`)
+- **Descripción**: Representa una motocicleta.
+- **Atributos privados adicionales**:
+  - `engineSize`: Tamaño del motor.
+  - `hasSidecar`: Indica si tiene sidecar.
+- **Métodos**:
+  - Constructores, getters y setters para los nuevos atributos.
+  - Sobrescritura del método `showDetails()` para incluir tamaño del motor y sidecar.
+
+### `Truck` (hereda de `Vehicle`)
+- **Descripción**: Representa un camión.
+- **Atributos privados adicionales**:
+  - `loadCapacity`: Capacidad de carga.
+  - `numberOfAxles`: Número de ejes.
+- **Métodos**:
+  - Constructores, getters y setters para los nuevos atributos.
+  - Sobrescritura del método `showDetails()` para incluir capacidad de carga y número de ejes.
+
+### `VehicleRegistry`
+- **Descripción**: Gestiona el registro de vehículos.
+- **Atributos**:
+  - `registeredVehicles`: Colección de `Vehicles`.
+- **Métodos**:
+  - `registerVehicle()`: Registrar un nuevo vehículo.
+  - `showAllVehicles()`: Mostrar todos los vehículos registrados.
+  - `findVehicle()`: Buscar un vehículo por su número de matrícula.
+
+## Funcionalidad Principal
+
+En la clase `Main`, se deberá:
+
+- Instanciar varios coches, motocicletas y camiones.
+- Registrar estos vehículos en el `VehicleRegistry`.
+- Mostrar los detalles de cada vehículo.
+- Buscar vehículos específicos en el registro.
+
+## Instrucciones Adicionales
+
+- Utilice polimorfismo para gestionar diferentes tipos de `Vehicle`.
+- Asegúrese de que todas las clases tengan una estructura coherente y métodos bien definidos.
+- Escriba el código en el lenguaje Java.
