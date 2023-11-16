@@ -30,3 +30,23 @@ create table if not exists posts(
     foreign key(usuario) references usuarios(usuario_id),
     foreign key(categoria) references categorias(categoria_id)
     );
+
+create table if not exists comentario(
+                                         comentario_id serial primary key,
+                                         contenido varchar(255),
+    usuario integer,
+    post integer,
+
+    foreign key(usuario) references usuarios(usuario_id),
+    foreign key(post) references posts(post_id)
+    );
+
+create table if not exists etiquetas_posts
+(
+    etiqueta_post_id serial primary key,
+    post integer,
+    etiqueta integer,
+
+    foreign key(post) references posts(post_id),
+    foreign key(etiqueta) references etiquetas(etiqueta_id)
+    );
