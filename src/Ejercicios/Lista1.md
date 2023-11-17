@@ -563,3 +563,35 @@ En la clase `Main`, se deberá:
 - Utilice polimorfismo para gestionar diferentes tipos de `Vehicle`.
 - Asegúrese de que todas las clases tengan una estructura coherente y métodos bien definidos.
 - Escriba el código en el lenguaje Java.
+
+# Ejercicio 17
+
+Este ejercicio implica la creación de un sistema de gestión de personal en una empresa utilizando Java. Se utilizará herencia y polimorfismo para manejar diferentes tipos de empleados y una clase para administrar una lista de estos empleados.
+
+## Clases de Empleados
+
+### Clase Base: Empleado
+- Atributos: nombre, ID, departamento.
+- Métodos:
+  - `mostrar_info()`: Retorna información del empleado.
+  - `calcular_salario()`: Calcula el salario (será sobrescrito en subclases).
+
+### Clase Derivada: Desarrollador
+- Atributos adicionales: lenguajes de programación.
+- Método sobrescrito: `calcular_salario()`.
+
+### Clase Derivada: Gerente
+- Atributos adicionales: lista de empleados a cargo.
+- Método sobrescrito: `calcular_salario()`.
+
+### Clase Derivada: Diseñador
+- Atributos adicionales: tipo de diseño.
+- Método sobrescrito: `calcular_salario()`.
+
+## Clase Gestora: Empresa
+- Atributos:
+  - Lista de empleados.
+- Métodos:
+  - `añadir_empleado(empleado)`: Añade un empleado a la lista.
+  - `eliminar_empleado(id)`: Elimina un empleado por su ID.
+  - `mostrar_empleados()`: Muestra información de todos los empleados.
