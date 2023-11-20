@@ -12,7 +12,7 @@ COMMIT;
 
 -- Ejecutar al inicio para reiniciar el contador de id
 ALTER SEQUENCE usuarios_usuario_id_seq RESTART WITH 1;
-ALTER SEQUENCE comentario_comentario_id_seq RESTART WITH 1;
+ALTER SEQUENCE comentarios_comentario_id_seq RESTART WITH 1;
 ALTER SEQUENCE etiquetas_etiqueta_id_seq RESTART WITH 1;
 ALTER SEQUENCE etiquetas_posts_etiqueta_post_id_seq RESTART WITH 1;
 ALTER SEQUENCE posts_post_id_seq RESTART WITH 1;
