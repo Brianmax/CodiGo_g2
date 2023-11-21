@@ -53,6 +53,8 @@ create table if not exists etiquetas_posts
     foreign key(etiqueta) references etiquetas(etiqueta_id)
     );
 
+-- insertamos usuarios
+
 insert into usuarios (nombre, email, edad, passworduser, fechacreacion) values ('Emmalynne', 'ejeromson0@toplist.cz', 93, 'rS1}L6`f', '2023-09-29');
 insert into usuarios (nombre, email, edad, passworduser, fechacreacion) values ('Ilyssa', 'ibroske1@facebook.com', 62, 'xP7&GF?Syf`', '2023-06-24');
 insert into usuarios (nombre, email, edad, passworduser, fechacreacion) values ('Reena', 'rdelacourt2@nydailynews.com', 43, 'mH7<$fO1', '2023-03-11');
