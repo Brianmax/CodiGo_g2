@@ -15,6 +15,18 @@ public class Usuario {
     private byte edad;
     private String passworduser;
     private Date fechacreacion;
-
     // relacion de uno a muchos
+
+
+    public Usuario(String nombre, String email, byte edad, String passworduser) {
+        this.nombre = nombre;
+        this.email = email;
+        this.edad = edad;
+        this.passworduser = passworduser;
+    }
+    public void printUser(){
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Email" + email);
+        System.out.println("Edad" + edad);
+    }
 }

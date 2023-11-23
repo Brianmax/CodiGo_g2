@@ -34,6 +34,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public List<Usuario> getAllUsers() {
-        return null;
+        return usuarioDao.getAll();
     }
 }

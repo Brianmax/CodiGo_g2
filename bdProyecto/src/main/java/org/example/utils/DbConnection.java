@@ -7,7 +7,6 @@ import java.util.Properties;
 
 public class DbConnection {
     private Connection connection;
-
     public Connection getConnection(){
         try {
             Properties props = new Properties();
