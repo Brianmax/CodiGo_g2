@@ -1,14 +1,14 @@
-CREATE TABLE Departamentos if not exists (
+CREATE TABLE Departamentos (
     ID_Departamento SERIAL PRIMARY KEY,
     Nombre_Departamento varchar(255)
 );
-CREATE TABLE Empleados if not exists(
+CREATE TABLE Empleados (
     ID_Empleado SERIAL PRIMARY KEY,
     Nombre varchar(255),
     ID_Departamento int,
     FOREIGN KEY (ID_Departamento) REFERENCES Departamentos(ID_Departamento)
 );
-CREATE TABLE Proyectos if not exists(
+CREATE TABLE Proyectos (
     ID_Proyecto SERIAL PRIMARY KEY,
     Nombre_Proyecto varchar(255) unique,
     ID_Encargado int,
