@@ -1,0 +1,64 @@
+use("mydb")
+
+db.products.find()
+
+use("mydb")
+db.products.updateOne(
+    // filtro
+    {
+        _id:5
+    },
+    // update
+    {
+        $set:{
+            price: 15
+        }
+    }
+)
+
+db.products.find()
+// actualizando una propiedad
+use("mydb")
+db.products.updateOne(
+    // filtro
+    {
+        _id:5
+    },
+    // update
+    {
+        $set:{
+            brand: "Gloria"
+        }
+    }
+)
+
+
+use("mydb")
+db.products.updateMany(
+    {
+        department:"Foods"
+    },
+    // update
+    {
+        $set:
+        {
+            stock: 150
+        }
+    }
+)
+
+// operador inc, rename, eq, ne, lt, gt, lte, gte
+
+use("mydb")
+db.products.updateMany(
+    {
+        department: "Foods"
+    },
+    // update
+    {
+        $inc:
+        {
+            price: 5
+        }
+    }
+)

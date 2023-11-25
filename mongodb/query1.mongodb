@@ -1,0 +1,15 @@
+// usar sample_training
+
+use("sample_training")
+db.zips.find()
+
+use("sample_training")
+db.zips.find().count()
+
+// consulta con filtro
+use("sample_training")
+db.zips.find(
+    {
+        state: "NY"
+    }
+)

@@ -1,0 +1,35 @@
+use("mydb")
+db.products.insertMany(
+    [
+        {
+            _id: 5,
+            name:"Milk",
+            price: 10,
+            department: "Foods",
+            stock: 200,
+            sales: 40
+        },
+        {
+            _id: 2,
+            name:"Cake",
+            price: 3,
+            department: "Foods",
+            stock: 100,
+            sales: 10
+        },
+        {
+            _id: 7,
+            name:"TV",
+            price: 2000,
+            department: "Electronics",
+            stock: 50,
+            sales: 5
+        }
+    ],
+    {
+        ordered: false
+    }
+)
+
+use("mydb")
+db.products.find()

@@ -1,0 +1,96 @@
+use("dbLoc")
+
+db.gps.insertMany(
+    [
+        {
+            name: "GPS-1",
+            location: {
+                coordindates: [12.322, 43.34]
+            }
+        },
+        {
+            name: "GPS-2",
+            location: {
+                coordindates: [200.322, 434.34]
+            }
+        },
+        {
+            name: "GPS-3",
+            location: {
+                coordindates: [52.322, 83.34]
+            }
+        },
+        {
+            name: "GPS-4",
+            location: {
+                coordindates: [100.322, 93.34]
+            }
+        },
+        {
+            name: "GPS-5",
+            location: {
+                coordinrates: [1000.322, 2230.3]
+            }
+        },
+        {
+            name: "GPS-1",
+            location: {
+                coordindates: [233,2, 333.34]
+            }
+        }
+    ]
+)
+
+// sale un nuevo delivery
+
+use("dbLoc")
+db.gps.insertOne(
+        {
+            name: "GPS-7",
+            location: {
+                coordindates: [23.2, 33.34]
+            }
+        }
+)
+use("dbLoc")
+db.gps.updateOne(
+    {
+        name: "GPS-2",
+    },
+    // update
+    {
+        $set:
+        {
+            location:
+            {
+                coordindates:[302.323, 500.32]
+            }
+        }
+    },
+    {
+        upsert: true
+    }
+)
+
+use("dbLoc")
+db.gps.find()
+
+use("dbLoc")
+db.gps.updateOne(
+    {
+        name: "GPS-10",
+    },
+    // update
+    {
+        $set:
+        {
+            location:
+            {
+                coordindates:[3094.323, 5040.32]
+            }
+        }
+    },
+    {
+        upsert: true
+    }
+)

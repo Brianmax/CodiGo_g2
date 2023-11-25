@@ -1,0 +1,28 @@
+use("mydb")
+db.createCollection("products")
+
+use("mydb")
+db.products.insertOne(
+    {
+        name:"Hammer",
+        price: 99.99,
+        department: "Tools",
+        stock: 55,
+        sales: 20
+    }
+)
+
+use("mydb")
+db.products.find()
+
+use("mydb")
+db.products.insertOne(
+    {
+        name: "Car",
+        price: 30000,
+        department: "Vehicles",
+        stock: 10,
+        sales: 3,
+        color: "Red"
+    }
+)
