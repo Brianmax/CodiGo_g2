@@ -1,4 +1,4 @@
-CREATE TABLE Departamentos if not exists (
+CREATE TABLE Departamentos if not exists(
     ID_Departamento SERIAL PRIMARY KEY,
     Nombre_Departamento varchar(255)
 );
