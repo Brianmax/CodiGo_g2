@@ -1,0 +1,18 @@
+use("tienda")
+db.usuarios.insertOne(
+    {
+        name:"Juan",
+        password: "1244",
+        direcciones: [
+            {
+                street: "calle1",
+                n_dpartment: "102",
+                city: "Arequipa"
+            }
+        ],
+        email:"email@gmail.com"
+    }
+)
+
+use("tienda")
+db.usuarios.find();

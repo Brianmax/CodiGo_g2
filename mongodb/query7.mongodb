@@ -1,0 +1,96 @@
+use("tienda")
+db.createCollection("usuarios",
+    {
+        validator: {
+            $jsonSchema:
+            {
+                bsonType: 'object',
+                required: ['name', 'password','direcciones', 'email'],
+                properties: {
+                    name:{
+                        bsonType: 'string'
+                    },
+                    passwod:{
+                        bsonType: 'string'
+                    },
+                    direcciones: {
+                        bsonType: 'array',
+                        items:{
+                            bsonType: 'object',
+                            required: ['street', 'n_dpartment','city'],
+                            properties:{
+                                street: {
+                                    bsonType: 'string'
+                                },
+                                n_dpartment:{
+                                    bsonType: 'string'
+                                },
+                                city:
+                                {
+                                    bsonType: 'string'
+                                }
+                            }
+                        }
+
+                    },
+                    productos:
+                    {
+                        bsonType: 'array',
+                        items:{
+                            bsonType: 'object',
+                            required: ['product', 'price'],
+                            properties:
+                            {
+                                product: {
+                                    bsonType: 'string'
+                                },
+                                price:{
+                                    bsonType: 'number'
+                                },
+                                comentarios:{
+                                    bsonType: "array",
+                                    items:{
+                                        bsonType: 'objectId'
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    email:
+                    {
+                        bsonType: 'string',
+                        pattern:'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+                    }
+                }
+            }
+        }
+    }
+)
+
+// '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+
+// crear la coleccion de comentarios
+// comentario, size, likes
+use("tienda")
+db.createCollection("comentarios", {
+    validator: {
+        $jsonSchema:{
+            bsonType: 'object',
+            required: ['productoId', 'comentario', 'size', 'likes'],
+            properties:{
+                productoId:{
+                    bsonType: 'objectId' // Referencia al _id del producto
+                },
+                comentario:{
+                    bsonType: 'string'
+                },
+                size:{
+                    bsonType: 'number'
+                },
+                likes:{
+                    bsonType: 'number'
+                }
+            }
+        }
+    }
+})

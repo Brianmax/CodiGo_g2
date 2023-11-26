@@ -1,0 +1,101 @@
+// delete
+use("dbLoc")
+db.gps.deleteOne(
+    // filtro
+    {
+        _id: ObjectId("65601ee11c65bd77ee62f869")
+    }
+)
+// operador gt (greater than)
+use("sample_training")
+db.zips.find(
+    {
+        pop: {
+            $gt: 10000
+        }
+    }
+)
+// lt (less than)
+use("sample_training")
+db.zips.find(
+    {
+        pop: {
+            $lt: 900
+        }
+    }
+)
+// operadores ne, eq
+
+use("sample_training")
+db.zips.find(
+    {
+        city: "ELROD"
+    }
+)
+
+use("sample_training")
+db.zips.find(
+    {
+        city:{
+            $eq: "ELROD"
+        }
+    }
+)
+
+// operador ne
+
+
+use("sample_training")
+db.zips.find(
+    {
+        state:
+        {
+            $ne: "AL"
+        }
+    }
+)
+
+use("sample_training")
+db.zips.find(
+    {
+        "loc.y":
+        {
+            $gt: 10
+        }
+    }
+)
+
+// operador and
+use("sample_training")
+db.zips.find(
+    {
+        $and:[
+            {
+                state:"NY"
+            },
+            {
+                pop:
+                {
+                    $lt:50000
+                }
+            }
+        ]
+    },
+    // agregation
+    {
+        _id: 0,
+        state: 1,
+        pop: 1
+    }
+)
+// state IA pop < 900
+use("sample_training")
+db.companies.find(
+    {
+        "relationships.person.first_name": "Michael"
+    },
+    {
+        "relationships.person.first_name": 1
+    }
+)
+use("sample_trainin")
